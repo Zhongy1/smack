@@ -29,7 +29,7 @@ ts-node server.ts -p 3000
 
 ## Usage
 
-1. Use in the browser: go to `http://localhost:{port}`
+1. Use in the browser: go to `http://localhost:{port}`. Press shift+Enter to process your string input.
 
 ![Alt text](/images/gui.png?raw=true "Optional Title")
 
