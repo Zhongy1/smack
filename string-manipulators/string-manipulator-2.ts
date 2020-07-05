@@ -25,7 +25,7 @@ export class StringManipulator2 extends StringManipulator {
     public manipulateString(str: string): string {
         let letterNumber = str.replace(/\a\ /g, 'u');
         letterNumber = letterNumber.replace(/\e\ /g, 'o');
-        letterNumber = letterNumber.replace(/\i\ /g, 'i');
+        letterNumber = letterNumber.replace(/\i\ /g, '1');
         letterNumber = letterNumber.replace(/\o\ /g, 'e');
         letterNumber = letterNumber.replace(/\u\ /g, 'a');
         
