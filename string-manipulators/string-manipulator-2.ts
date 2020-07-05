@@ -23,11 +23,11 @@ export class StringManipulator2 extends StringManipulator {
     }
 
     public manipulateString(str: string): string {
-        let letterNumber = str.replace(/a/g, ' 1 ');
-        letterNumber = letterNumber.replace(/e/g, ' 5 ');
-        letterNumber = letterNumber.replace(/i/g, ' 9 ');
-        letterNumber = letterNumber.replace(/o/g, ' 15 ');
-        letterNumber = letterNumber.replace(/u/g, ' 21 ');
+        let letterNumber = str.replace(/a/g, ' u ');
+        letterNumber = letterNumber.replace(/e/g, ' o ');
+        letterNumber = letterNumber.replace(/i/g, ' i ');
+        letterNumber = letterNumber.replace(/o/g, ' e ');
+        letterNumber = letterNumber.replace(/u/g, ' a ');
         
         letterNumber += ' ' + this.codeLetter(letterNumber);
         return letterNumber;
