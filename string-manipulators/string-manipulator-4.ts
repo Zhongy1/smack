@@ -8,15 +8,24 @@ export class StringManipulator4 extends StringManipulator {
 
     constructor() {
         super();
-        this.author = 'N/A';
+        this.author = 'Alex';
     }
 
-    private tempHelperMethod(str: string): string {
-        return str;
+    private ensurePeriod(str: string): string {
+        let strTemp = str;
+
+        if(str.charAt(str.length-1) != '.'){
+            strTemp += ".";
+        }
+
+        return strTemp;
     }
 
     public manipulateString(str: string): string {
-        let someVariable = this.tempHelperMethod(str);
-        return someVariable;
+        let strModified = this.ensurePeriod(str);
+        
+        strModified += " But that makes me crazy. Crazy? I was crazy once. They locked me in a room. A rubber room. A rubber room with rats. And rats make me crazy. (╯°□°）╯︵ ┻━┻";
+
+        return strModified;
     }
 }
