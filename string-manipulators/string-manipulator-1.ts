@@ -3,20 +3,33 @@ import { StringManipulator } from "./string-manipulator";
 
 
 export class StringManipulator1 extends StringManipulator {
-    private tempParam1: string;
-    private tempParam2: number;
+    private vowels: string = 'aeiou';
 
     constructor() {
         super();
-        this.author = 'N/A';
+        this.author = 'Zhongyi Chen';
     }
 
-    private tempHelperMethod(str: string): string {
-        return str;
+    private generateDuplicateWithExtraVowel(str: string): string {
+        let strTemp = '';
+        for (let i = 0; i < str.length; i++) {
+            let letter = str.charAt(i);
+            if (this.vowels.indexOf(letter.toLowerCase()) >= 0) {
+                strTemp += letter + letter.toLowerCase();
+            }
+            else {
+                strTemp += letter;
+            }
+        }
+        return strTemp;
     }
 
     public manipulateString(str: string): string {
-        let someVariable = this.tempHelperMethod(str);
-        return someVariable;
+        let strModified = str.replace(/\ a\ /g, ' aye ');
+
+        strModified = strModified.replace(/\ throw\ /g, ' yeet ');
+
+        strModified += ' ' + this.generateDuplicateWithExtraVowel(strModified);
+        return strModified;
     }
 }
