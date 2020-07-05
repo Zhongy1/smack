@@ -3,20 +3,33 @@ import { StringManipulator } from "./string-manipulator";
 
 
 export class StringManipulator2 extends StringManipulator {
-    private tempParam1: string;
-    private tempParam2: number;
+    private consonant: string = 'bcdfghjklmnpqrstvwz';
 
     constructor() {
         super();
-        this.author = 'N/A';
+        this.author = 'Jeff Guo';
     }
 
-    private tempHelperMethod(str: string): string {
-        return str;
+    private codeLetter(str: string): string {
+        let strTemp = '';
+        for(let i = 0; i < str.length; i++){
+            let letter = str.charAt(i);
+            let numberCode = str.charCodeAt(i);
+            if(this.consonant.indexOf(letter.toLowerCase()) >= 0){
+                strTemp += numberCode;
+            }
+        }
+        return strTemp;
     }
 
     public manipulateString(str: string): string {
-        let someVariable = this.tempHelperMethod(str);
-        return someVariable;
+        let letterNumber = str.replace(/a/g, ' 1 ');
+        letterNumber = letterNumber.replace(/e/g, ' 5 ');
+        letterNumber = letterNumber.replace(/i/g, ' 9 ');
+        letterNumber = letterNumber.replace(/o/g, ' 15 ');
+        letterNumber = letterNumber.replace(/u/g, ' 21 ');
+        
+        letterNumber += ' ' + this.codeLetter(letterNumber);
+        return letterNumber;
     }
 }
